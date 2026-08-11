@@ -25,18 +25,18 @@ University schedules change constantly, and manual task management leads to cale
 
 ## Architecture & Key Features
 
-┌─────────────────────────┐   cURL (JSON Payload)   ┌───────────────────────────┐
-│     Primary Backend     │ ──────────────────────> │    Python Microservice    │
-│      (PHP / MySQL)      │                         │      (Flask / Render)     │
-│                         │ <────────────────────── │                           │
-└────────────┬────────────┘     JSON Response       └─────────────┬─────────────┘
-│                                                    │
-│ Fetch / AJAX                                       │ External APIs
-▼                                                    ▼
-┌─────────────────────────┐                         ┌───────────────────────────┐
-│        Frontend         │                         │  Canvas / iCal / Mapping  │
-│  (HTML5 / CSS3 / JS)    │                         │         Services          │
-└─────────────────────────┘                         └───────────────────────────┘
+```mermaid
+graph TD
+    A[Frontend: HTML5 / CSS3 / JS] -->|Fetch / AJAX| B[Primary Backend: PHP / MySQL]
+    B -->|cURL JSON Payload| C[Microservice: Python Flask]
+    C -->|JSON Response| B
+    C -->|API Requests| D[External Services: Canvas / iCal / Maps]
+
+    style A fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#fff
+    style B fill:#1f2937,stroke:#10b981,stroke-width:2px,color:#fff
+    style C fill:#1f2937,stroke:#f59e0b,stroke-width:2px,color:#fff
+    style D fill:#1f2937,stroke:#6366f1,stroke-width:2px,color:#fff
+```
 
 
 
