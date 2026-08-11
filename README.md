@@ -14,7 +14,7 @@
 
 *  **University Students:** [Live Application](https://smarttimetabler.infinityfreeapp.com)
 *  **Recruiters & Guests:** [Instant Sandbox/Demo Dashboard](https://smarttimetabler.infinityfreeapp.com/demo_login.php) *(No registration required; pre-loaded with mock timetables and tasks)*
-
+*  **Demo Video:** [Linkedin Post](https://lnkd.in/p/e2NMmkhw)
 ---
 
 ## Project Overview
@@ -56,8 +56,6 @@ University schedules change constantly, and manual task management leads to cale
 * Designed a fully normalized **MySQL schema** (3NF) featuring junction tables (`ToDo_Tags`) for dynamic, reusable hex-colored tags.
 * Implemented automated database cleanup logic to permanently purge completed tasks 24 hours post-completion timestamp, optimizing storage efficiency.
 
----
-
 ##  Tech Stack
 
 * **Languages:** PHP, Python 3, JavaScript (ES6+), SQL, HTML5, CSS3
@@ -68,14 +66,13 @@ University schedules change constantly, and manual task management leads to cale
 ---
 
 ##  Database Schema (ERD)
-## 📂 Database Schema (ERD)
 
 ```mermaid
 erDiagram
     USERS ||--o{ EVENTS : "has"
     USERS ||--o{ TODO : "has"
     USERS ||--o| USER_SETTINGS : "configures"
-    
+
     TODO ||--o{ TODO_TAGS : "tagged with"
     TAGS ||--o{ TODO_TAGS : "applied to"
 
@@ -126,11 +123,9 @@ erDiagram
         int taskID FK
         int TagID FK
     }
-
 ```
 
 
 Authors
 Darragh Coleman – University of Manchester
-
 Co-developed alongside team members for the Year 1 Team Project.
