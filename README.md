@@ -68,17 +68,22 @@ University schedules change constantly, and manual task management leads to cale
 ---
 
 ##  Database Schema (ERD)
+## 📂 Database Schema (ERD)
 
 ```mermaid
 erDiagram
     USERS ||--o{ EVENTS : "has"
     USERS ||--o{ TODO : "has"
-    USERS ||--o{ CANVAS_ASSIGNMENTS : "has"
     USERS ||--o| USER_SETTINGS : "configures"
-    USERS ||--o| TIMETABLE_LINKS : "provides"
     
     TODO ||--o{ TODO_TAGS : "tagged with"
     TAGS ||--o{ TODO_TAGS : "applied to"
+
+    USERS {
+        int UserID PK
+        string username
+        string email
+    }
 
     USER_SETTINGS {
         int UserID PK
@@ -121,6 +126,8 @@ erDiagram
         int taskID FK
         int TagID FK
     }
+
+```
 
 
 Authors
